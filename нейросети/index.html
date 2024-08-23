@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейросети</title>
+    <!-- Ваши стили -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(58, 180, 60);
+            background: linear-gradient(267deg, rgba(58, 180, 60, 1) 0%, rgba(29, 253, 250, 1) 52%, rgba(69, 76, 252, 1) 100%);
+            color: #333333;
+            /* Черный текст */
+        }
+
+        header {
+            background-color: #0c1f5c;
+            /* Синий цвет */
+            color: #ffffff;
+            /* Белый текст */
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0px 4px 23px black;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .network_element {
+            border: 1px solid #333333;
+            /* Черная граница */
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px;
+            padding: 18px;
+            background: rgb(58, 177, 180);
+            background: radial-gradient(circle, rgba(58, 177, 180, 1) 0%, rgba(29, 41, 253, 1) 43%, rgba(219, 88, 216, 1) 100%);
+            /* Белый фон */
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .networ_box {
+            height: 100px;
+            width: 170px;
+            display: flex;
+            flex-basis: 25%;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+        }
+
+        .network:hover {
+            transform: scale(1.03);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            /* Белый фон */
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
+
+        .network-img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #yesBtn,
+        #noBtn {
+            background-color: #4285f4;
+            /* Синий цвет */
+            color: #ffffff;
+            /* Белый текст */
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #yesBtn:hover,
+        #noBtn:hover {
+            background-color: #0055cc;
+            /* Темно-синий цвет */
+        }
+
+        .close {
+            color: #888;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            float: right;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .element {
+            height: 300px;
+            width: 300px;
+            border: black;
+            border-radius: 50%;
+        }
+
+        .network_img {
+            align-items: end;
+            display: grid;
+            grid-template-columns: 350px 350px 350px;
+            margin-top: 20px;
+            margin-left: 200px;
+        }
+    </style>
+    <!-- Ваши стили -->
+</head>
+
+<body>
+
+    <header>
+        <h1>Нейросети</h1>
+    </header>
+
+    <main>
+
+        <div class="networ_box">
+            <div class="network_element"
+                onclick="openModal('Шедеврум', 'Шедеврум — проект, сервис и приложение компании «Яндекс», с помощью которого пользователи могут генерировать изображения по текстовому описанию с помощью нейросетей.', 'https://www.youtube.com/embed/di1OaEp8bzs', 'https://shedevrum.ai/', 'https://cdni.comss.net/logo/2023-10-19_09-38-43.png')">
+                Шедеврум</div>
+            <div class="network_element"
+                onclick="openModal('ChatGPT', 'ChatGPT — чат-бот с генеративным искусственным интеллектом, разработанный компанией OpenAI и способный работать в диалоговом режиме, поддерживающий запросы на естественных языках. Система способна отвечать на вопросы, генерировать тексты на разных языках, включая русский, относящиеся к различным предметным областям.', 'https://www.youtube.com/embed/aUYVsv5yqcg', 'https://chat.openai.com/', 'https://static.vecteezy.com/system/resources/previews/022/841/114/original/chatgpt-logo-transparent-background-free-png.png')">
+                ChatGPT</div>
+            <div class="network_element"
+                onclick="openModal('GammaApp', 'Gamma – веб-приложение, которое позволяет быстро создавать презентации, используя текст, изображения, анимацию и видео. Сервис подходит как для новичков, так и для более опытных пользователей. Для создания ярких проектов доступен набор удобных инструментов, а также готовые примеры. Для начала работы в Gamma необходимо создать аккаунт и свое рабочее пространство, где будут храниться все ваши проекты и презентации коллег.', 'https://www.youtube.com/embed/ugSxb3caHkk', 'https://gamma.app/signup?r=ae3c5gzvbndnyst', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tOF5QvI-wMUxjI-a6I0Gy--x0Y8TdX7ynnvxaLdl3g&s')">
+                GammaApp</div>
+            <div class="network_element"
+                onclick="openModal('OpenAI DALL-E', 'OpenAI DALL-E - нейросеть, способная генерировать уникальные изображения по текстовому описанию. Эта модель может создавать изображения на основе концепций, которые ей предложены, расширяя возможности искусства и дизайна.', 'https://www.youtube.com/embed/sqQrN0iZBs0', 'https://openai.com/', 'https://static.vecteezy.com/system/resources/previews/019/493/370/original/chatgpt-logo-openai-logo-ai-chatbot-chatgpt-copy-space-text-editorial-illustration-free-vector.jpg')">
+                OpenAI DALL-E</div>
+        </div>
+        <div class="network_img">
+            <img src="./img/19541.png" alt="" class="element">
+            <img src="./img/5_1666759001.jpg" alt="" class="element">
+            <img src="./img/63d05271b715940fadf2cd37fdbc39b7.jpeg" alt="" class="element">
+            <img src="./img/b9cc400b5e0c11ee9139aaafe6635749_upscaled.jpg" alt="" class="element">
+            <img src="./img/images.jpg" alt="" class="element">
+            <img src="./img/вф.jpg" alt="" class="element">
+        </div>
+    </main>
+
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- Кнопка закрытия модального окна -->
+            <span class="close" onclick="closeModal()">&times;</span>
+            <!-- Заголовок модального окна -->
+            <!-- Изображение нейросети -->
+            <img id="networkImage" class="network-img" src="" alt="Network Image">
+            <h2 id="networkTitle"></h2>
+            <!-- Описание нейросети -->
+            <p id="networkDescription"></p>
+
+            <!-- Видео нейросети -->
+            <iframe id="networkVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <div>
+                <!-- Вопрос о переходе на официальный сайт -->
+                Хотите ли вы перейти на сайт подробной информацией о данной нейросети?
+                <!-- Кнопки Да и Нет -->
+                <button id="yesBtn" onclick="redirectToOfficialSite()">Да</button>
+                <button id="noBtn" onclick="closeModal()">Нет</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, description, videoUrl, officialSiteUrl, imageUrl) {
+            document.getElementById('networkTitle').innerHTML = title;
+            document.getElementById('networkDescription').innerHTML = description;
+            document.getElementById('networkImage').src = imageUrl;
+            document.getElementById('networkVideo').src = videoUrl;
+            document.getElementById('myModal').style.display = 'block';
+            officialSiteLink = officialSiteUrl;
+        }
+
+        function closeModal() {
+            document.getElementById('networkTitle').innerHTML = '';
+            document.getElementById('networkDescription').innerHTML = '';
+            document.getElementById('networkImage').src = '';
+            document.getElementById('networkVideo').src = '';
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        var officialSiteLink = '';
+
+        function redirectToOfficialSite() {
+            window.location.href = officialSiteLink;
+        }
+
+        // Закрытие модального окна при клике вне его области
+        window.onclick = function (event) {
+            var modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
+
+</body>
+
+</html>
